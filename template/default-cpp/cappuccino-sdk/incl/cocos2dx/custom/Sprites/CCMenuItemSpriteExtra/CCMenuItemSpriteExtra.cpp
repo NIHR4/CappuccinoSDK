@@ -1,33 +1,23 @@
 #include "CCMenuItemSpriteExtra.h"
 
+void CCMenuItemSpriteExtra::selected(){
+	CCMenuItemSprite::selected();
+	auto resize = cocos2d::CCScaleTo::create(0.3, m_sizeMult);
+	auto bounce = cocos2d::CCEaseBounceOut::create(resize);
+	this->runAction(bounce);
+}
 
-DWORD base = (DWORD)GetModuleHandleA("GeometryDash.exe");
-namespace cocos2d {
-	#pragma runtime_checks( "s", off )
-	void CCMenuItemSpriteExtra::activate(){
-		typedef void(__thiscall* mActivate)(CCMenuItemSpriteExtra*);
-		reinterpret_cast<mActivate>(base + 0x191C0)(this);
-	}
+void CCMenuItemSpriteExtra::unselected(){
+	CCMenuItemSprite::selected();
+	auto resize = cocos2d::CCScaleTo::create(0.3, 1.0);
+	auto bounce = cocos2d::CCEaseBounceOut::create(resize);
+	this->runAction(bounce);
+}
 
-	void CCMenuItemSpriteExtra::selected(){
-		typedef void(__thiscall* mSelected)(CCMenuItemSpriteExtra*);
-		reinterpret_cast<mSelected>(base + 0x19270)(this);
-	}
 
-	void CCMenuItemSpriteExtra::unselected(){
-		typedef void(__thiscall* mUnselected)(CCMenuItemSpriteExtra*);
-		reinterpret_cast<mUnselected>(base + 0x19430)(this);
-	}
+CCMenuItemSpriteExtra* CCMenuItemSpriteExtra::create(CCNode *normalSprite, CCNode *selectedSprite, CCObject *target, cocos2d::SEL_MenuHandler selector){
+	auto spriteItem = new CCMenuItemSpriteExtra;
+	spriteItem->initWithNormalSprite(normalSprite, selectedSprite,nullptr, target, selector);
+	return spriteItem;
 
-	CCMenuItemSpriteExtra* CCMenuItemSpriteExtra::create(
-		
-		CCNode* normalSprite, 
-		CCObject* target, 
-		SEL_MenuHandler selector) {
-		typedef CCMenuItemSpriteExtra* (__thiscall* createPtr)(CCNode*,CCObject*, SEL_MenuHandler);
-		auto returnVal = reinterpret_cast<createPtr>(base + 0x18EE0)(normalSprite , target, selector);
-		__asm add esp,8
-		return returnVal;
-	}
-	#pragma runtime_checks( "s", restore )
 }
