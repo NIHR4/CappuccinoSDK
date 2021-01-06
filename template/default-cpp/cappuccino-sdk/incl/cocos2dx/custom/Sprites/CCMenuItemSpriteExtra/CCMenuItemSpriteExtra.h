@@ -1,3 +1,4 @@
+#pragma once
 #include <cocos2d.h>
 
 class CCMenuItemSpriteExtra : public cocos2d::CCMenuItemSprite{
