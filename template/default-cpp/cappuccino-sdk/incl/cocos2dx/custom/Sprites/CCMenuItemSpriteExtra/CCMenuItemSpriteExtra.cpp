@@ -17,7 +17,12 @@ void CCMenuItemSpriteExtra::unselected(){
 
 CCMenuItemSpriteExtra* CCMenuItemSpriteExtra::create(CCNode *normalSprite, CCNode *selectedSprite, CCObject *target, cocos2d::SEL_MenuHandler selector){
 	auto spriteItem = new CCMenuItemSpriteExtra;
-	spriteItem->initWithNormalSprite(normalSprite, selectedSprite,nullptr, target, selector);
+	if (spriteItem && spriteItem->initWithNormalSprite(normalSprite, selectedSprite, nullptr, target, selector)) 
+		spriteItem->autorelease();
+	else {
+		delete spriteItem;
+		spriteItem = nullptr;
+	}
 	return spriteItem;
 
 }
