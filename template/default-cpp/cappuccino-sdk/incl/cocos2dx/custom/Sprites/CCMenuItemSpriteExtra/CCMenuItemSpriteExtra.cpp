@@ -14,6 +14,12 @@ void CCMenuItemSpriteExtra::unselected(){
 	this->runAction(bounce);
 }
 
+void CCMenuItemSpriteExtra::activate{
+	this->stopAllActions();
+	auto reset = cocos2d::CCScaleTo::create(0.0, m_fOriginalSizeMult);
+	this->runAction(reset);
+	CCMenuItemSprite::activate();
+}
 
 CCMenuItemSpriteExtra* CCMenuItemSpriteExtra::create(CCNode *normalSprite, CCNode *selectedSprite, CCObject *target, cocos2d::SEL_MenuHandler selector){
 	auto spriteItem = new CCMenuItemSpriteExtra;
