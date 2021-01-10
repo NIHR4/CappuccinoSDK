@@ -67,6 +67,12 @@ NS_CC_BEGIN
         MEDIUM,
         HIGH
     }TextureQuality;
+
+    typedef enum{
+        FadeTransition,
+        MoveInTransition
+    }PopTransition;
+
 /* Forward declarations. */
 
 //Robtop Modification : New Classes
@@ -521,7 +527,7 @@ public:
     bool getSmoothFixCheck(void) const;
     int getSmoothFixCounter(void) const;
     int levelForSceneInStack(CCScene*);
-    void popSceneWithTransition(float, class PopTransition);
+    void popSceneWithTransition(float, PopTransition);
     int sceneCount(void);
     //void setActualDeltaTime(float); //Already taken care of
     //void setDeltaTime(float);       //Already taken care of
