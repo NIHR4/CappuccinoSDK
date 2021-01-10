@@ -2,14 +2,14 @@
 
 void CCMenuItemSpriteExtra::selected(){
 	CCMenuItemSprite::selected();
-	auto resize = cocos2d::CCScaleTo::create(0.3, m_sizeMult);
+	auto resize = cocos2d::CCScaleBy::create(0.3, m_sizeMult);
 	auto bounce = cocos2d::CCEaseBounceOut::create(resize);
 	this->runAction(bounce);
 }
 
 void CCMenuItemSpriteExtra::unselected(){
 	CCMenuItemSprite::selected();
-	auto resize = cocos2d::CCScaleTo::create(0.3, 1.0);
+	auto resize = cocos2d::CCScaleBy::create(0.3, 1/m_sizeMult);
 	auto bounce = cocos2d::CCEaseBounceOut::create(resize);
 	this->runAction(bounce);
 }
