@@ -8,7 +8,8 @@ CappucinoSDK  is a modding utility that allows you to interact with a modified v
 3. Type `py .\create_project.py` into the terminal to display the project creator's syntax
 4. Once you have created a project utilizing the provided script, navigate over to `/projects` to find your project
 5. Open the generated solution utilizing Visual Studio(only version 2019 has been tested)
-6. Enjoy!
+6. Make sure the solution is set to build to x86, not x64
+7. Enjoy!
 
 # What you need
 * Python 3.0 or higher
