@@ -17,8 +17,7 @@ void CCMenuItemSpriteExtra::unselected(){
 void CCMenuItemSpriteExtra::activate () {
 	CCMenuItemSprite::activate();
 	this->stopAllActions();
-	auto reset = cocos2d::CCScaleTo::create(0.0, m_origScale);
-	this->runAction(reset);
+	this->setScale(m_origScale);
 }
 
 void CCMenuItemSpriteExtra::setScale(float scale) {
