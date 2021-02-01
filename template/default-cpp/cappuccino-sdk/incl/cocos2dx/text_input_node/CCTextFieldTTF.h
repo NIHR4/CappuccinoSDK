@@ -91,6 +91,9 @@ public:
         CC_UNUSED_PARAM(sender);
         return false;
     }
+
+    //Robtop Modification:
+    virtual void textChanged();
 };
 
 /**
