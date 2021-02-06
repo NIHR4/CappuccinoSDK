@@ -401,6 +401,7 @@ public:
 
     CC_PROPERTY_NOVIRTUAL(float, m_fActualDeltaTime, ActualDeltaTime); //0x68;
 
+    //Hello there
     ROB_CC_SYNTHESIZE(bool, m_bIsTransitioning, IsTransitioning) //0x6C;
     
 
