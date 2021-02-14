@@ -196,6 +196,9 @@ public:
      * @lua NA
      */
     CCTouchHandler* findHandler(CCTouchDelegate *pDelegate);
+
+    //Robtop Modification:
+    void incrementForcePrio(int priority);
 protected:
     void forceRemoveDelegate(CCTouchDelegate *pDelegate);
     void forceAddHandler(CCTouchHandler *pHandler, CCArray* pArray);
