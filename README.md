@@ -1,4 +1,4 @@
-#This library is OBSOLETE
+# This library is OBSOLETE
 This project hasn't been mantained for well over 6 months and over that period of time better alternatives have been made.
 For anyone looking to develop Geometry Dash mods I recommend the following replacement: https://github.com/HJfod/cocos-headers/
 Thanks to those who followed my project.
