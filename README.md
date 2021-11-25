@@ -1,3 +1,8 @@
+#This library is OBSOLETE
+This project hasn't been mantained for well over 6 months and over that period of time better alternatives have been made.
+For anyone looking to develop Geometry Dash mods I recommend the following replacement: https://github.com/HJfod/cocos-headers/
+Thanks to those who followed my project.
+
 # What is CappuccinoSDK
 CappucinoSDK  is a modding utility that allows you to interact with a modified version of the game engine Cocos-2DX v2.2.3, which is utilized by the game Geometry Dash
 
